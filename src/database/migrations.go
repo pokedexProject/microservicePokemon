@@ -3,7 +3,7 @@ package database
 import (
 	"log"
 
-	model "github.com/pokedexProject/microservicePokemon/dominio"
+	model "github.com/pokedexProject/microservicePokemon/src/dominio"
 	"gorm.io/gorm"
 )
 

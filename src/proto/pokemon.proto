@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/pokedexProject/microservicePokemon/src/proto";
+
+service PokemonService {
+  rpc CreatePokemon (CreatePokemonRequest) returns (CreatePokemonResponse);
+  rpc GetPokemon (GetPokemonRequest) returns (GetPokemonResponse);
+  rpc UpdatePokemon (UpdatePokemonRequest) returns (UpdatePokemonResponse);
+  rpc DeletePokemon (DeletePokemonRequest) returns (DeletePokemonResponse);
+  rpc ListPokemons (ListPokemonsRequest) returns (ListPokemonsResponse);
+}
+
+message CreatePokemonRequest {
+  string nombre = 1;
+  string tipo = 2;
+  string nivel = 3;
+  string puntosSalud = 4;
+  string movimiento = 5;
+}
+
+message CreatePokemonResponse {
+  string id = 1;
+  string nombre = 2;
+  string tipo = 3;
+  string nivel = 4;
+  string puntosSalud = 5;
+  string movimiento = 6;
+}
+
+message GetPokemonRequest {
+  string id = 1;
+}
+
+message GetPokemonResponse {
+  string id = 1;
+  string nombre = 2;
+  string tipo = 3;
+  string nivel = 4;
+  string puntosSalud = 5;
+  string movimiento = 6;
+}
+
+message UpdatePokemonRequest {
+  string id = 1;
+  string nombre = 2;
+  string tipo = 3;
+  string nivel = 4;
+  string puntosSalud = 5;
+  string movimiento = 6;
+}
+
+message UpdatePokemonResponse {
+  string id = 1;
+  string nombre = 2;
+  string tipo = 3;
+  string nivel = 4;
+  string puntosSalud = 5;
+  string movimiento = 6;
+}
+
+message DeletePokemonRequest {
+  string id = 1;
+}
+
+message DeletePokemonResponse {
+  string mensaje = 1;
+}
+
+message ListPokemonsRequest {
+}
+
+message ListPokemonsResponse {
+  repeated Pokemon pokemons = 1;
+}
+
+message Pokemon{
+  string id = 1;
+  string nombre = 2;
+  string tipo = 3;
+  string nivel = 4;
+  string puntosSalud = 5;
+  string movimiento = 6;
+}

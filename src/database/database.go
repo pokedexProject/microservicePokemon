@@ -35,8 +35,7 @@ func Connect() *DB {
 	fmt.Printf("DB_USER: %s\n", user)
 	fmt.Printf("DB_PASSWORD: %s\n", password)
 	fmt.Printf("DB_NAME: %s\n", dbname)
-
-	// dsn := "root:mysql@tcp(172.16.238.10:3306)/db_users?parseTime=true"
+	// dsn := "root:mysql@tcp(172.16.238.10:3306)/db_user?parseTime=true"
 	//dsn := "root:mysql@tcp(localhost:3306)/db_users?parseTime=true"
 	dsn := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=%s", user, password, dbname, sslMode)
 	conn, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})

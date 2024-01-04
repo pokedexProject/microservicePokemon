@@ -1,11 +1,11 @@
 package dominio
 
 type ActualizarPokemonInput struct {
-	Nombre      string `json:"nombre,omitempty"`
-	Tipo        string `json:"tipo,omitempty"`
-	Nivel       string `json:"nivel,omitempty"`
-	PuntosSalud string `json:"puntoSalud,omitempty"`
-	Movimiento  string `json:"movimiento,omitempty"`
+	Nombre      *string `json:"nombre,omitempty"`
+	Tipo        *string `json:"tipo,omitempty"`
+	Nivel       *string `json:"nivel,omitempty"`
+	PuntosSalud *string `json:"puntoSalud,omitempty"`
+	Movimiento  *string `json:"movimiento,omitempty"`
 }
 
 type CrearPokemonInput struct {

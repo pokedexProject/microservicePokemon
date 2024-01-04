@@ -4,7 +4,7 @@ import (
 	"strconv"
 )
 
-// UsuarioGORM es el modelo de usuario para GORM de Usuario
+// PokemonGORM es el modelo de pokemon para GORM de Pokemon
 type PokemonGORM struct {
 	ID          uint   `gorm:"primaryKey:autoIncrement" json:"id"`
 	Nombre      string `gorm:"type:varchar(255);not null"`
@@ -14,7 +14,7 @@ type PokemonGORM struct {
 	Movimiento  string `gorm:"type:varchar(255);not null"`
 }
 
-// TableName especifica el nombre de la tabla para UsuarioGORM
+// TableName especifica el nombre de la tabla para PokemonGORM
 func (PokemonGORM) TableName() string {
 	return "pokemones"
 }
