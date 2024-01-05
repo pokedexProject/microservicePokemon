@@ -22,14 +22,14 @@ func main() {
 	pokemonRepository := repository.NewPokeRepository(db)
 	pokemonService := service.NewPokemonService(pokemonRepository)
 	// Configura el servidor gRPC
-	//este servidor está escuchando en el puerto 50051
-	//y se encarga de registrar el servicio de usuarios
+	//este servidor está escuchando en el puerto 50052
+	//y se encarga de registrar el servicio de entrenadores
 	grpcServe := grpc.NewServer()
-	// Registra el servicio de usuarios en el servidor gRPC
+	// Registra el servicio de entrenadores en el servidor gRPC
 	pb.RegisterPokemonServiceServer(grpcServe, pokemonService)
 
 	// Define el puerto en el que se ejecutará el servidor gRPC
-	port := "50051"
+	port := "50052"
 	listen, err := net.Listen("tcp", ":"+port)
 	if err != nil {
 		log.Fatalf("Failed to listen: %v", err)

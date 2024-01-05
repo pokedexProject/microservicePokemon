@@ -6,7 +6,7 @@ Microservicio de pokemon
     - **database**: Conexión a base de datos y donde se establecen las migraciones
     - **models**: Modelos: Inputs que se reciben de la api y modelos que retorna como respuesta.
     - **proto**: Almacena archivos de definición del protocolo gRPC. Contiene las definiciones de los servicios y mensajes que serán utilizados para la comunicación. Solo se codifica el user.proto, lo demás es autogenerado.
-    - **repository**: Contiene la lógica de negocio, el cómo se implementan los servicios de usuarios en la bd.
+    - **repository**: Contiene la lógica de negocio, el cómo se implementan los servicios de entrenadores en la bd.
     - **service**: Este servicio implementa la interfaz que se genera del archivo proto
     - **main.go**: Se inicializan los repos, bd y **se define el servidor gRPC** del microservicio.
 
