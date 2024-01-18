@@ -1,0 +1,30 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 2202
+      POSTGRES_DB: db_pokemon
+    ports:
+      - "5432:5432" # Mapea el puerto del contenedor de PostgreSQL al puerto del host
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Usa el volumen que creaste
+
+  myapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DB_HOST: 172.17.0.2
+      DB_PORT: "5432"
+      DB_USER: postgres
+      DB_PASSWORD: 2202
+      DB_NAME: db_pokemon
+    ports:
+      - "8080:8080" # Mapea el puerto de tu aplicación al puerto del host
+    depends_on:
+      - postgres # Asegura que tu aplicación se inicie después del contenedor de PostgreSQL
+
+volumes:
+  postgres_data:

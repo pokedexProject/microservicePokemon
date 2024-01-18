@@ -1,0 +1,27 @@
+
+# .air.toml
+
+# Rutas de inclusión de archivos a supervisar (agrega tus propias rutas)
+[build]
+dirs = ["."]
+
+# Comando para iniciar tu aplicación (ajusta según tu proyecto)
+cmd = "go run main.go"
+
+# Comando adicional para ejecutar antes de iniciar la aplicación (opcional)
+# pre = []
+
+# Comando adicional para ejecutar después de iniciar la aplicación (opcional)
+# post = []
+
+# Excluye rutas específicas de archivos (opcional)
+[exclude]
+files = ["*.log", "tmp/*"]
+
+# Variables de entorno para la aplicación (opcional)
+[env]
+PORT = "8080" # Por ejemplo, el puerto que utiliza tu aplicación
+
+# Opciones adicionales (opcional)
+[misc]
+log = "air.log"
